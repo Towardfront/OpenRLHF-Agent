@@ -14,7 +14,7 @@ export NCCL_SOCKET_TIMEOUT=1800000
 
 MODEL_PATH="Qwen/Qwen3-4B-Instruct-2507"
 SAVE_PATH="${WORK_DIR}/exp/Qwen3-test"
-AGENT_FUNC_PATH="${WORK_DIR}/examples/qwen3/agent_func.py"
+AGENT_FUNC_PATH="${SCRIPT_DIR}/agent_func.py"
 DATASET_PATH="{your_dataset_path_here}" # TODO: set your dataset path here
 
 set -x

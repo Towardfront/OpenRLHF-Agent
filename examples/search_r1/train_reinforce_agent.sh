@@ -10,7 +10,7 @@ DATASET_PATH="RUC-NLPIR/FlashRAG_datasets"
 SAVE_PATH="${WORK_DIR}/exp/Qwen3-Search-R1"
 
 # Demo for search
-AGENT_FUNC_PATH="${WORK_DIR}/examples/search_r1/agent_func.py"
+AGENT_FUNC_PATH="${SCRIPT_DIR}/agent_func.py"
 
 
 CKPT_ARGS=(

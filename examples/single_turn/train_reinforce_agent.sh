@@ -10,7 +10,7 @@ DATASET_PATH="zhuzilin/dapo-math-17k"
 SAVE_PATH="${WORK_DIR}/exp/Qwen3-4B-Thinking"
 
 # Demo for reasoning
-AGENT_FUNC_PATH="${WORK_DIR}/examples/single_turn/runtime_demo.py"
+AGENT_FUNC_PATH="${SCRIPT_DIR}/runtime_demo.py"
 
 
 CKPT_ARGS=(
