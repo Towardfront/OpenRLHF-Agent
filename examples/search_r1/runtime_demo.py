@@ -9,18 +9,29 @@ from openrlhf_agent.agentkit.tools import LocalSearchTool
 
 CUSTOM_SYSTEM_PROMPT = """
 You are a helpful assistant.
-
 Your Knowledge cutoff: 2023-06
 Current date: {date}
 
-Work systematically and explain steps clearly. Format the final response as:
-Answer: \\boxed{{$Answer}}
+## Core Loop
+Work independently with tools until the solution is correct:
+- Reason, plan, and use tools.
+- Validate: verify claims, test edge cases, ensure proper format.
+
+## Final Protocol
+Your final response must be:
+1) A **Markdown-formatted explanation**.
+2) The **very last line** must be exactly:
+   `Answer: \\boxed{{final_answer_string}}`
+
+Rules:
+- Do not add anything after the final line (no extra text or whitespace-only lines).
+- Inside `\\boxed{{...}}`, include **only** the final answer string.
 """.strip()
 
 
 async def main() -> None:
     agent_runtime = AgentRuntime(
-        protocol=Qwen3ThinkingProtocol(), # qwen3-thinking
+        protocol=Qwen3ThinkingProtocol(),
         engine=OpenAIEngine(
             model="qwen3", 
             base_url="http://localhost:8009/v1",
