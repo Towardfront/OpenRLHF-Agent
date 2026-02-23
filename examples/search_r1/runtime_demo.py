@@ -44,7 +44,7 @@ async def main() -> None:
             ],
         ),
     )
-    messages = [{"role": "user", "content": "Please use the commentary tool to share your thoughts, and use local_search to find what Python is."}]
+    messages = [{"role": "user", "content": "what's your goal?"}]
     async for message in agent_runtime.run_steps(messages):
         print(message)
 
