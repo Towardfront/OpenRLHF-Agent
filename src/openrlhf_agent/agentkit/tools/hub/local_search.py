@@ -32,7 +32,7 @@ class LocalSearchTool(ToolBase):
         "required": ["query"],
     }
 
-    def __init__(self, *, base_url: str, timeout: float = 10.0):
+    def __init__(self, *, base_url: str, timeout: float = 600.0):
         self.retriever_url = base_url
         self.timeout = float(timeout)
 
