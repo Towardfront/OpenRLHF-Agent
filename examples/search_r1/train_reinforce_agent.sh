@@ -6,7 +6,8 @@ WORK_DIR="$(realpath "$SCRIPT_DIR/../..")"
 set -x
 
 MODEL_PATH="Qwen/Qwen3-4B-Thinking-2507"
-DATASET_PATH="RUC-NLPIR/FlashRAG_datasets"
+DATASET_PATH="PeterJinGo/nq_hotpotqa_train"
+# test: "RUC-NLPIR/FlashRAG_datasets"
 SAVE_PATH="${WORK_DIR}/exp/Qwen3-Search-R1"
 
 # Demo for search
