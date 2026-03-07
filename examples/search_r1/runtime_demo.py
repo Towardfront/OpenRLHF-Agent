@@ -9,23 +9,13 @@ from openrlhf_agent.agentkit.tools import LocalSearchTool
 
 CUSTOM_SYSTEM_PROMPT = """
 You are a helpful assistant.
-Your Knowledge cutoff: 2023-06
-Current date: {date}
 
-## Core Loop
-Work independently with tools until the solution is correct:
-- Reason, plan, and use tools.
-- Validate: verify claims, test edge cases, ensure proper format.
-
-## Final Protocol
-Your final response must be:
-1) A **Markdown-formatted explanation**.
-2) The **very last line** must be exactly:
-   `Answer: \\boxed{{final_answer_string}}`
-
-Rules:
-- Do not add anything after the final line (no extra text or whitespace-only lines).
-- Inside `\\boxed{{...}}`, include **only** the final answer string.
+## Output Rules
+- First provide a clear markdown explanation of the solution.
+- Then end exactly with:
+  `Answer: \\boxed{{<final_answer>}}`
+- The boxed expression must contain only the final answer in canonical form.
+- Do not add any text after the boxed answer.
 """.strip()
 
 
